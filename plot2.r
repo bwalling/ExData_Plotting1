@@ -1,0 +1,6 @@
+household_power_consumption <- read.csv("C:/Users/bwalling/Dropbox/School/Coursera/Exploratory Data Analysis/household_power_consumption.txt", sep=";", na.strings="?")
+hpc = subset(household_power_consumption, Date == "1/2/2007" | Date == "2/2/2007")
+hpctime = cbind(hpc, "DateTime" = strptime(paste(hpc$Date,hpc$Time,sep=" "), "%d/%m/%Y %H:%M:%S"))
+png("C:/Users/bwalling/Dropbox/School/Coursera/datasciencecoursera/ExData_Plotting1/plot2.png",width=480,height=480,units="px")
+plot(hpctime$DateTime,hpctime$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
+dev.off()

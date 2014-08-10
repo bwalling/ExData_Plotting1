@@ -1,0 +1,5 @@
+household_power_consumption <- read.csv("C:/Users/bwalling/Dropbox/School/Coursera/Exploratory Data Analysis/household_power_consumption.txt", sep=";", na.strings="?")
+hpc = subset(household_power_consumption, Date == "1/2/2007" | Date == "2/2/2007")
+png("C:/Users/bwalling/Dropbox/School/Coursera/datasciencecoursera/ExData_Plotting1/plot1.png",width=480,height=480,units="px")
+hist(hpc$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+dev.off()
